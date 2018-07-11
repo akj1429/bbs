@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.aop.interceptor.DebugInterceptor;
 import org.springframework.stereotype.Service;
 
 import com.web.board.dao.BoardDAO;

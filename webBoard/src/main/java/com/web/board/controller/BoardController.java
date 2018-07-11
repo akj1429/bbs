@@ -33,8 +33,10 @@ public class BoardController {
 		return mav;
 	}//home
 	
-	@RequestMapping(value="writeBoard.do", method=RequestMethod.GET)
-	public String write(){
+	@RequestMapping(value="writeBoard.do")
+	public String write(BoardVO vo){
+		
+		
 		return "writeBoard";
 	}//write
 	
@@ -54,5 +56,11 @@ public class BoardController {
 		
 		return mav;
 	}//boardDetail
+	
+	@RequestMapping(value="delete.do")
+	public String delete(@RequestParam int bno) throws Exception{
+		boardService.deleteBoard(bno);
+		return "redirect:home.do";
+	} 
 	
 }

@@ -8,6 +8,17 @@
 <head>
 	<title>Home</title>
 	 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	 
+	 <script type="text/javascript">
+		$(document).ready(function(){
+			$('#btnDelete').click(function(){
+				alert("삭제");
+				document.location.href="delete.do";
+				document.frm.submit();
+			}); 
+		});
+	</script> 
+	 
 </head>
 	<jsp:include page="ScriptCss.jsp"/>
 <body>
@@ -31,7 +42,8 @@
 		</div>
 		
 		<button type="button" id="btnUpdate">수정</button>
-		<button type="button" id="btnDelete">삭제</button>
+		<a href="delete.do"><button type="button" > 삭제</button></a>
+		
 	</form>
 	
 </body>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +14,7 @@ import com.web.board.vo.BoardVO;
 public class BoardDAOImpl implements BoardDAO{
 
 	@Inject
-	private SqlSessionTemplate sqlSession;
+	private SqlSession sqlSession;
 	
 	//게시글 추가
 	@Override

@@ -7,29 +7,23 @@
 <html>
 <head>
 	<title>Home</title>
-	 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#btnWrite").click(function(){
-				//글작성 페이지 이동
-				location.href="writeBoard.do"
-			}); 
-			
-			$("#boardTitle").click(function(){
-				var url = ${row.bno};
-				alert(url);
+			$('#btnWrite').click(function(){
+				alert("글쓰기");
+				document.location.href="writeBoard.do";
 			});
 		});
 	</script>
-	
 </head>
 	<jsp:include page="ScriptCss.jsp"/>
-<body>
+<body>   
 <div class="container">
 	<h1>
 		GitJunBoard!
 	</h1>
-	<button type="button" class="btn btn-primary" id="btnWrite">글쓰기</button>
+	<button type="button" class="btn btn-primary" id="btnWrite" >글쓰기</button>
 	<label></label> 
 </div>
 <div class="container">

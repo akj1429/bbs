@@ -9,16 +9,17 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#btnSave").click(function(){
+			alert("저장");
 			var title = $("#title").val();
             var content = $("#content").val();
             var writer = $("#writer").val();
             if(title == ""){
-                alert("제목을 입력하세요");
+                alert("제목을 입력하세요");  
                 document.form1.title.focus();
                 return;
             }
-            if(content == ""){
-                alert("내용을 입력하세요");
+            if(content == ""){ 
+                alert("내용을 입력하세요"); 
                 document.form1.content.focus();
                 return;
             }
@@ -45,7 +46,7 @@
 		</div>
 		<div>
 			작성자 <textarea name="writer" id="writer" placeholder="작성자 입력"></textarea>
-		</div>
+		</div> 
 		
 		<button type="button" id="btnSave">확인</button>
 		<button type="reset">취소</button>
