@@ -13,7 +13,7 @@
 		$(document).ready(function(){
 			$('#btnDelete').click(function(){
 				alert("삭제");
-				document.location.href="delete.do";
+				document.frm.action="delete.do";
 				document.frm.submit();
 			}); 
 		});
@@ -29,7 +29,7 @@
 			작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="yyyy-MM-dd HH:mm"/>
 		</div>
 		<div>
-			조회수 : ${dto.viewcnt}
+			조회수 : ${dto.viewcnt} 
 		</div>
 		<div>
 			제목 <input name="title" id="title" size="80" value="${dto.title }" placeholder="제목입력">
@@ -41,10 +41,11 @@
 			작성자 : <input name="writer" id="writer" value="${dto.writer }" placeholder="이름 입력">
 		</div>
 		
+		<input type="hidden" name="bno" value="${dto.bno}">
 		<button type="button" id="btnUpdate">수정</button>
-		<a href="delete.do"><button type="button" > 삭제</button></a>
-		
+		<button type="button" id="btnDelete"> 삭제</button>
 	</form>
+		<a href="home.do"><button class="btn btn-primary">목록으로</button></a>
 	
 </body>
 </html>

@@ -19,16 +19,9 @@ public class BoardServiceImpl implements BoardService {
 	@Inject
 	private BoardDAO boardDao;
 
-	//게시글쓰기
+	//게시글 쓰기
 	@Override
 	public void createBoard(BoardVO vo) throws Exception {
-		String title = vo.getTitle();
-		String content = vo.getContent();
-		String writer = vo.getWriter();
-		
-		vo.setTitle(title);
-		vo.setContent(content);
-		vo.setWriter(writer);
 		boardDao.create(vo);
 	}
 
@@ -59,7 +52,7 @@ public class BoardServiceImpl implements BoardService {
 	//게시글 조회수 증가
 	@Override
 	public void increaseViewCnt(int bno, HttpSession session) throws Exception {
-		
+		boardDao.increase(bno);
 	}
 	
 	

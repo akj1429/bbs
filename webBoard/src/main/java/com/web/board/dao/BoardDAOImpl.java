@@ -16,9 +16,10 @@ public class BoardDAOImpl implements BoardDAO{
 	@Inject
 	private SqlSession sqlSession;
 	
-	//게시글 추가
+	//게시글 쓰기
 	@Override
 	public void create(BoardVO vo) throws Exception {
+		System.out.println("DAOImpl>>>>>>"+vo.getBno());
 		sqlSession.insert("board.insert", vo);
 	}
 

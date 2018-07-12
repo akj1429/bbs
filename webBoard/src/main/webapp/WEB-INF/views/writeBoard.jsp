@@ -9,7 +9,6 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#btnSave").click(function(){
-			alert("저장");
 			var title = $("#title").val();
             var content = $("#content").val();
             var writer = $("#writer").val();
@@ -30,10 +29,8 @@
             }
 			document.frm.submit();
 		});//btnSave
-		
 	});
 </script>
-
 </head>
 <body>
 	<h2>게시글 작성</h2>
@@ -47,11 +44,9 @@
 		<div>
 			작성자 <textarea name="writer" id="writer" placeholder="작성자 입력"></textarea>
 		</div> 
-		
 		<button type="button" id="btnSave">확인</button>
 		<button type="reset">취소</button>
-		<a href="home.do" class="btn btn-primary" id="list">목록으로</a>
+		<a href="home.do" id="list"><button class="btn btn-primary" >목록으로</button></a>
 	</form>
-	
 </body>
 </html>

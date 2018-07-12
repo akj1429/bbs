@@ -35,11 +35,8 @@ public class BoardController {
 	
 	@RequestMapping(value="writeBoard.do")
 	public String write(BoardVO vo){
-		
-		
 		return "writeBoard";
 	}//write
-	
 	@RequestMapping(value="insert.do", method=RequestMethod.POST)
 	public String insert(@ModelAttribute BoardVO vo) throws Exception{
 		boardService.createBoard(vo);
@@ -48,7 +45,7 @@ public class BoardController {
 	
 	@RequestMapping(value="boardDetail.do", method=RequestMethod.GET)
 	public ModelAndView boardDetail(@RequestParam int bno, HttpSession session) throws Exception{
-		//boardService.increaseViewCnt(bno, session);
+		boardService.increaseViewCnt(bno, session);
 		ModelAndView mav = new ModelAndView();
 		
 		mav.setViewName("boardDetail");
@@ -61,6 +58,6 @@ public class BoardController {
 	public String delete(@RequestParam int bno) throws Exception{
 		boardService.deleteBoard(bno);
 		return "redirect:home.do";
-	} 
+	}//delete
 	
 }

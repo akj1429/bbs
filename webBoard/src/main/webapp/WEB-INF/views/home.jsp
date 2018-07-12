@@ -11,23 +11,29 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#btnWrite').click(function(){
-				alert("글쓰기");
 				document.location.href="writeBoard.do";
 			});
+			
+			
 		});
 	</script>
 </head>
 	<jsp:include page="ScriptCss.jsp"/>
 <body>   
 <div class="container">
-	<h1>
-		GitJunBoard!
-	</h1>
+	<div class="board-top">
+		<h1>
+			GitJunBoard!
+		</h1>
+		<div class="board-login">
+			<input type="button" id="btnLogin" value="로그인">
+		</div>
+	</div>
+	<br>
 	<button type="button" class="btn btn-primary" id="btnWrite" >글쓰기</button>
-	<label></label> 
 </div>
+	<br> 
 <div class="container">
-<form id="frmDetail">
 	<table id="dataTbl" class="table table-striped table-hover">
 		<tr>
 			<td>번호</td>
@@ -35,10 +41,10 @@
 			<td>글쓴이</td>
 			<td>작성시간</td>
 			<td>조회수</td>
-		<tr>
+		<tr> 
 			<c:forEach var="row" items="${boardList}">
-				<tr>
-					<td>${row.bno}</td>
+				<tr> 
+					<td>${row.bno}</td> 
 					<td><a href="boardDetail.do?bno=${row.bno}"> ${row.title}</a></td>
 					<td>${row.writer}</td>
 					<td>
@@ -47,9 +53,19 @@
 					<td>${row.viewcnt}</td>
 				</tr>
 			</c:forEach>
-	</table>
-</form>
+	</table> 
 </div>
+
+<form name="frm" action="searchList.do" method="get">
+	<div class="container">
+		<select class="selectSearch">
+			<option value="title" id="sctTitle"><c:if test="${board.type eq 'title'}">selected="selected"</c:if> 제목</option>
+			<option value="writer" id="sctWriter"><c:if test="${board.type eq 'writer'}">selected="selected"</c:if>작성자</option>
+		</select>
+			<input class="selectSearch" type="text" name="search" id="search" value="" >
+			<input type="button" id="btnSearch" value="검색">
+	</div>
+</form>
 
 </body>
 </html>
