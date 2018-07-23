@@ -1,11 +1,33 @@
 $(document).ready(function(){
 	var frm= document.register-form;
-			$('.btnJoin').click(function(){
+	
+			$('#btnJoin').click(function(){
 				var id = $("#id").val();
 				var passward = $("#passward").val();
 				var pass_confirm = $("#password_confirm").val();
+				var agree = frm.reg_agree.checked;
+				alert("sdfdf");
+				if(id ==""){   
+					alert("id를 입력하세요");
+					return;
+				}
+				if(passward ==""){
+					alert("passward를 입력하세요");
+					return;
+				}
+				if( (passward.length < 4) || (passward.length > 15) ){
+					alert("비밀번호는 4~15자 입니다");
+					return;
+				}
+				if( passward != pass_confirm ){
+					alert("비밀번호를 확인해주세요");
+					return;
+				}
+				if(!agree){
+					alert("약관에 동의하여주십시오");
+					return;
+				}
 				
-				document.location.href="writeBoard.do";
 			});
 		});
 

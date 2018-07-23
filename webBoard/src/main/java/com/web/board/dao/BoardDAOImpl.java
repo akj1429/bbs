@@ -9,6 +9,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.web.board.vo.BoardVO;
+import com.web.board.vo.LoginVO;
 
 @Repository //현재 클래스를 dao bean으로 등록
 public class BoardDAOImpl implements BoardDAO{
@@ -19,7 +20,6 @@ public class BoardDAOImpl implements BoardDAO{
 	//게시글 쓰기
 	@Override
 	public void create(BoardVO vo) throws Exception {
-		System.out.println("DAOImpl>>>>>>"+vo.getBno());
 		sqlSession.insert("board.insert", vo);
 	}
 
@@ -51,6 +51,18 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public void increase(int bno) throws Exception {
 		sqlSession.update("board.increase", bno);
+	}
+
+	//로그인 체크
+	@Override
+	public boolean loginChk(LoginVO vo) throws Exception {
+		return false;
+	}
+
+	//회원가입
+	@Override
+	public void regUserChk(LoginVO vo) throws Exception {
+		sqlSession.insert("board.regUser",vo);
 	}
 
 }

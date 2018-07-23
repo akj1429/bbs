@@ -70,10 +70,18 @@
 	ORDER BY bno desc
 </select>
 
+<insert id="regUser" parameterType="LoginVO">
+	INSERT INTO user(id,password)
+	values(
+		#{id},
+		#{password}
+		)
+</insert>
+
 <select id="loginChk" resultType="integer" parameterType="LoginVO">
 	SELECT count(*)
 	 FROM user;
-	 WHERE id = #{id} AND password = #{passward}
+	 WHERE id = #{id} AND password = #{password}
 </select>
 
 <select id="totalAccount" resultType="integer">

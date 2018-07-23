@@ -5,9 +5,13 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import com.web.board.vo.BoardVO;
+import com.web.board.vo.LoginVO;
 
 public interface BoardService {
 
+	//회원가입
+	public void regUser(LoginVO vo) throws Exception;
+	
 	//게시글 등록
 	public void createBoard(BoardVO vo) throws Exception;
 	

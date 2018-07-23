@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.web.board.service.BoardService;
 import com.web.board.vo.BoardVO;
+import com.web.board.vo.LoginVO;
 
 @Controller
 public class BoardController {
@@ -36,17 +37,23 @@ public class BoardController {
 	@RequestMapping(value="login.do")
 	public String login() throws Exception{
 		return "login";
-	}
+	}//login
 	
-	@RequestMapping(value="forgotPass.do")
-	public String forgotPass() throws Exception{
-		return "forgotPass";
-	}
+	@RequestMapping(value="regUser.do")
+	public String regAfter(LoginVO vo) throws Exception{
+		boardService.regUser(vo);
+		return "login";
+	}//regAfter
 	
 	@RequestMapping(value="userRegist.do")
 	public String userRegist() throws Exception{
 		return "userRegist";
-	}
+	}//userRegist
+	
+	@RequestMapping(value="forgotPass.do")
+	public String forgotPass() throws Exception{
+		return "forgotPass";
+	}//forgotPass
 	
 	@RequestMapping(value="writeBoard.do")
 	public String write(BoardVO vo){

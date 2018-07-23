@@ -12,7 +12,8 @@ import com.web.board.dao.BoardDAO;
 import com.web.board.dao.BoardDAO;
 import com.web.board.service.BoardService;
 import com.web.board.vo.BoardVO;
-
+import com.web.board.vo.LoginVO;
+ 
 @Service
 public class BoardServiceImpl implements BoardService {
 	
@@ -53,6 +54,12 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void increaseViewCnt(int bno, HttpSession session) throws Exception {
 		boardDao.increase(bno);
+	}
+
+	//회원가입
+	@Override
+	public void regUser(LoginVO vo) throws Exception {
+		boardDao.regUserChk(vo);
 	}
 	
 	

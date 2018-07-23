@@ -29,9 +29,9 @@
 	<jsp:include page="/resources/css/ScriptCss.jsp"/>
 <body>
 	<jsp:include page="header.jsp"/>
-<h2>게시글</h2>
+<div class="container">
 	<form name="frm" method="post">
-		<div>
+		<div> 
 			작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="yyyy-MM-dd HH:mm"/>
 		</div>
 		<div>
@@ -52,6 +52,6 @@
 		<button type="button" id="btnUpdate">수정</button>
 		<button type="button" id="btnDelete"> 삭제</button>
 		<a href="home.do"><button class="btn btn-primary">목록으로</button></a>
-	
+</div>
 </body>
 </html>
