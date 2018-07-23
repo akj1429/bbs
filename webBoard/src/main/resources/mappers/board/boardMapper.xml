@@ -3,19 +3,19 @@
 <mapper namespace="board">
 
 
-<select id="listAll"  resultType="com.web.board.vo.BoardVO" parameterType="com.web.board.vo.BoardVO">
+<select id="listAll"  resultType="BoardVO" parameterType="com.web.board.vo.BoardVO">
 	SELECT bno, title, content, writer, regdate, viewcnt
 	FROM tbl_board
 	ORDER BY bno desc
 </select>
 
-<select id="view" resultType="com.web.board.vo.BoardVO" parameterType="com.web.board.vo.BoardVO">
+<select id="view" resultType="BoardVO" parameterType="BoardVO">
 	SELECT bno, title, content, writer, regdate, viewcnt 
 	FROM tbl_board
 	WHERE bno = #{bno}
 </select>
 
-<insert id="insert" parameterType="com.web.board.vo.BoardVO">
+<insert id="insert" parameterType="BoardVO">
       <selectKey resultType="int" keyProperty="bno" order="BEFORE">
          SELECT
          NULLIF(MAX(BNO),0)+1 AS BNO
@@ -51,7 +51,7 @@
 	WHERE	bno = #{bno} 
 </update>
 
-<delete id="delete" parameterType="com.web.board.vo.BoardVO">
+<delete id="delete" parameterType="BoardVO">
 	DELETE FROM tbl_board
 	WHERE bno = #{bno}
 </delete>
@@ -68,6 +68,16 @@
 		</when>
 	</choose>
 	ORDER BY bno desc
+</select>
+
+<select id="loginChk" resultType="integer" parameterType="LoginVO">
+	SELECT count(*)
+	 FROM user;
+	 WHERE id = #{id} AND password = #{passward}
+</select>
+
+<select id="totalAccount" resultType="integer">
+	SELECT count(*) FROM user;
 </select>
 
 </mapper>

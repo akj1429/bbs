@@ -10,6 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <link rel="stylesheet" type="text/css" href="resources/css/general.css">
+<script src="resources/js/login.js"/>
 <title>register</title>
 </head>
 <jsp:include page="/resources/css/ScriptCss.jsp"/>
@@ -26,33 +27,16 @@
 			<div class="main-login-form">
 				<div class="login-group">
 					<div class="form-group">
-						<label for="reg_username" class="sr-only">Email address</label>
-						<input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="username">
+						<label for="reg_username" class="sr-only">ID</label>
+						<input type="text" class="form-control" id="id" name="reg_username" placeholder="아이디">
 					</div>
 					<div class="form-group">
 						<label for="reg_password" class="sr-only">Password</label>
-						<input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password">
+						<input type="password" class="form-control" id="password" name="reg_password" placeholder="비밀번호">
 					</div>
 					<div class="form-group">
 						<label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-						<input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
-					</div>
-					
-					<div class="form-group">
-						<label for="reg_email" class="sr-only">Email</label>
-						<input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="email">
-					</div>
-					<div class="form-group">
-						<label for="reg_fullname" class="sr-only">Full Name</label>
-						<input type="text" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name">
-					</div>
-					
-					<div class="form-group login-group-checkbox">
-						<input type="radio" class="" name="reg_gender" id="male" placeholder="username">
-						<label for="male">male</label>
-						
-						<input type="radio" class="" name="reg_gender" id="female" placeholder="username">
-						<label for="female">female</label>
+						<input type="password" class="form-control" id="password_confirm" name="reg_password_confirm" placeholder="비밀번호 확인">
 					</div>
 					
 					<div class="form-group login-group-checkbox">
@@ -60,7 +44,7 @@
 						<label for="reg_agree">i agree with <a href="#">terms</a></label>
 					</div>
 				</div>
-				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+				<button type="submit" class="btnJoin"><i class="fa fa-chevron-right"></i></button>
 			</div>
 			<div class="etc-login-form">
 				<p>already have an account? <a href="login.do">login here</a></p>

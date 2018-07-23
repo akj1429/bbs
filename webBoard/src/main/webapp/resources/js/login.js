@@ -1,3 +1,15 @@
+$(document).ready(function(){
+	var frm= document.register-form;
+			$('.btnJoin').click(function(){
+				var id = $("#id").val();
+				var passward = $("#passward").val();
+				var pass_confirm = $("#password_confirm").val();
+				
+				document.location.href="writeBoard.do";
+			});
+		});
+
+/*
 (function($) {
     "use strict";
 	
@@ -27,16 +39,7 @@
   $("#login-form").submit(function() {
   	remove_loading($(this));
 		
-		if(options['useAJAX'] == true)
-		{
-			// Dummy AJAX request (Replace this with your AJAX code)
-		  // If you don't want to use AJAX, remove this
-  	  dummy_submit_form($(this));
-		
-		  // Cancel the normal submission.
-		  // If you don't want to use AJAX, remove this
   	  return false;
-		}
   });
 	
 	// Register Form
@@ -154,3 +157,5 @@
   }
 	
 })(jQuery);
+
+*/
