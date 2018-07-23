@@ -13,27 +13,29 @@
 			$('#btnWrite').click(function(){
 				document.location.href="writeBoard.do";
 			});
+			$('#btnLogin').click(function(){
+				document.location.href="login.do";
+			});
 			
 			
 		});
 	</script>
 </head>
-	<jsp:include page="ScriptCss.jsp"/>
-<body>   
+	<jsp:include page="/resources/css/ScriptCss.jsp"/>
+<body>
+<jsp:include page="header.jsp"/>
 <div class="container">
 	<div class="board-top">
-		<h1>
-			GitJunBoard!
-		</h1>
 		<div class="board-login">
-			<input type="button" id="btnLogin" value="로그인">
+			<input type="button" id="btnLogin" value="Login">
 		</div>
 	</div>
-	<br>
+	</br>
 	<button type="button" class="btn btn-primary" id="btnWrite" >글쓰기</button>
 </div>
-	<br> 
+	</br> 
 <div class="container">
+<!-- 게시글 리스트 -->
 	<table id="dataTbl" class="table table-striped table-hover">
 		<tr>
 			<td>번호</td>
@@ -56,6 +58,10 @@
 	</table> 
 </div>
 
+<!-- paging 기능 구현 -->
+
+
+<!-- 게시글 검색 구현 -->
 <form name="frm" action="searchList.do" method="get">
 	<div class="container">
 		<select class="selectSearch">

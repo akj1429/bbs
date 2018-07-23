@@ -43,10 +43,10 @@
 	WHERE bno = #{bno}
 </update>
 
-<update id="update">
+<update id="update" parameterType="BoardVO">
 	UPDATE	tbl_board
-	SET	title = #{title}
-			content = #{content}
+	SET	title = #{title},
+			content = #{content},
 			writer = #{writer}
 	WHERE	bno = #{bno} 
 </update>

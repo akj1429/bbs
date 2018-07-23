@@ -33,13 +33,35 @@ public class BoardController {
 		return mav;
 	}//home
 	
+	@RequestMapping(value="login.do")
+	public String login() throws Exception{
+		return "login";
+	}
+	
+	@RequestMapping(value="forgotPass.do")
+	public String forgotPass() throws Exception{
+		return "forgotPass";
+	}
+	
+	@RequestMapping(value="userRegist.do")
+	public String userRegist() throws Exception{
+		return "userRegist";
+	}
+	
 	@RequestMapping(value="writeBoard.do")
 	public String write(BoardVO vo){
 		return "writeBoard";
 	}//write
+	
 	@RequestMapping(value="insert.do", method=RequestMethod.POST)
 	public String insert(@ModelAttribute BoardVO vo) throws Exception{
 		boardService.createBoard(vo);
+		return "redirect:home.do";
+	}//insert
+	
+	@RequestMapping(value="update.do", method=RequestMethod.POST)
+	public String update(@ModelAttribute BoardVO vo) throws Exception{
+		boardService.updateBoard(vo);
 		return "redirect:home.do";
 	}//insert
 	

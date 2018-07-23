@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<jsp:include page="/resources/css/ScriptCss.jsp"/>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -33,6 +34,8 @@
 </script>
 </head>
 <body>
+	<jsp:include page="header.jsp"/>
+	<div class="container">
 	<h2>게시글 작성</h2>
 	<form action="insert.do" name="frm" method="post">
 		<div>
@@ -44,9 +47,10 @@
 		<div>
 			작성자 <textarea name="writer" id="writer" placeholder="작성자 입력"></textarea>
 		</div> 
+	</form>
 		<button type="button" id="btnSave">확인</button>
 		<button type="reset">취소</button>
 		<a href="home.do" id="list"><button class="btn btn-primary" >목록으로</button></a>
-	</form>
+	</div>
 </body>
 </html>

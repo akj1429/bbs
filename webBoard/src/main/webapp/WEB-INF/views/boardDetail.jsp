@@ -16,13 +16,19 @@
 				document.frm.action="delete.do";
 				document.frm.submit();
 			}); 
+		
+			$('#btnUpdate').click(function(){
+				alert("Update");
+				document.frm.action="update.do";
+				document.frm.submit();
+			}); 
 		});
 	</script> 
 	 
 </head>
-	<jsp:include page="ScriptCss.jsp"/>
+	<jsp:include page="/resources/css/ScriptCss.jsp"/>
 <body>
-
+	<jsp:include page="header.jsp"/>
 <h2>게시글</h2>
 	<form name="frm" method="post">
 		<div>
@@ -42,9 +48,9 @@
 		</div>
 		
 		<input type="hidden" name="bno" value="${dto.bno}">
+	</form>
 		<button type="button" id="btnUpdate">수정</button>
 		<button type="button" id="btnDelete"> 삭제</button>
-	</form>
 		<a href="home.do"><button class="btn btn-primary">목록으로</button></a>
 	
 </body>
