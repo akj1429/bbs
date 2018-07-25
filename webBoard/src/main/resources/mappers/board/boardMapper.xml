@@ -70,7 +70,7 @@
 	ORDER BY bno desc
 </select>
 
-<insert id="regUser" parameterType="LoginVO">
+<insert id="regUser" parameterType="com.web.board.vo.LoginVO">
 	INSERT INTO user(id,password)
 	values(
 		#{id},
@@ -78,7 +78,13 @@
 		)
 </insert>
 
-<select id="loginChk" resultType="integer" parameterType="LoginVO">
+<select id="idDuplChk" parameterType="LoginVO" resultType="String">
+	SELECT id
+	from user
+	where id = #{id}
+</select>
+
+<select id="loginChk" resultType="integer" parameterType="com.web.board.vo.LoginVO">
 	SELECT count(*)
 	 FROM user;
 	 WHERE id = #{id} AND password = #{password}

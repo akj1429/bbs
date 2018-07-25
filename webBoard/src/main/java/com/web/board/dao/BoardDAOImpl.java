@@ -62,6 +62,7 @@ public class BoardDAOImpl implements BoardDAO{
 	//회원가입
 	@Override
 	public void regUserChk(LoginVO vo) throws Exception {
+		System.out.println("다오임플 아이디값"+vo.getId()+"패스워드::"+vo.getPassword());
 		sqlSession.insert("board.regUser",vo);
 	}
 

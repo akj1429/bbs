@@ -41,6 +41,7 @@ public class BoardController {
 	
 	@RequestMapping(value="regUser.do")
 	public String regAfter(LoginVO vo) throws Exception{
+		System.out.println("컨트롤러 아이디값"+vo.getId()+"패스워드::"+vo.getPassword());
 		boardService.regUser(vo);
 		return "login";
 	}//regAfter

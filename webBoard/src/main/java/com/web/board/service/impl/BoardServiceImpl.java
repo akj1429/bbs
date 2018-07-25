@@ -59,9 +59,8 @@ public class BoardServiceImpl implements BoardService {
 	//회원가입
 	@Override
 	public void regUser(LoginVO vo) throws Exception {
+		System.out.println("서비스임플 아이디값"+vo.getId()+"패스워드::"+vo.getPassword());
 		boardDao.regUserChk(vo);
 	}
-	
-	
 	
 }
